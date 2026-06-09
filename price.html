@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>料金のご案内 | 陽だまりデンタルクリニック</title>
+  <meta name="description" content="陽だまりデンタルクリニックの料金表ページです。保険診療・自費診療の料金を明確に掲載。料金シミュレーターで治療費の目安を簡単にチェックできます。デンタルローン・クレジットカード対応。">
+  <link rel="canonical" href="https://sumiyakaa.github.io/hidamari-dental/price.html">
+  <!-- OGP / Twitter Card ※本番URL確定後にドメインを差し替え -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="陽だまりデンタルクリニック">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="料金のご案内 | 陽だまりデンタルクリニック">
+  <meta property="og:description" content="保険診療・自費診療の料金を明確に掲載。料金シミュレーターで治療費の目安を簡単にチェックできます。デンタルローン・クレジットカード対応。">
+  <meta property="og:url" content="https://sumiyakaa.github.io/hidamari-dental/price.html">
+  <meta property="og:image" content="https://sumiyakaa.github.io/hidamari-dental/images/hero-fallback.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="料金のご案内 | 陽だまりデンタルクリニック">
+  <meta name="twitter:description" content="保険診療・自費診療の料金を明確に掲載。料金シミュレーターで治療費の目安を簡単にチェックできます。デンタルローン・クレジットカード対応。">
+  <meta name="twitter:image" content="https://sumiyakaa.github.io/hidamari-dental/images/hero-fallback.webp">
+  <!-- Favicon / アイコン / テーマカラー -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#3D5E30">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/price.css">
+  <!-- jsPDF（ローカル同梱：オフライン/file://でも確実に動作。旧cdnjs URLは404で読込失敗していたため差し替え） -->
+  <script src="js/jspdf.umd.min.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "LocalBusiness", "MedicalBusiness"],
+        "@id": "#organization",
+        "name": "陽だまりデンタルクリニック",
+        "alternateName": "HIDAMARI DENTAL CLINIC",
+        "description": "明確な料金体系で安心の歯科治療を提供。保険診療から自費診療まで幅広く対応。料金シミュレーターで事前に治療費の目安を確認できます。",
+        "telephone": "0120-XXX-XXX",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "東京都",
+          "addressCountry": "JP"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "自費診療と保険診療の違いは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "保険診療は健康保険が適用され自己負担は1〜3割です。自費診療は保険の制限を受けないため、セラミックやインプラントなど素材・技術の選択肢が広がります。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "デンタルローンは利用できますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、月々9,900円からの分割払いが可能です。最大84回払い対応で、お気軽にご利用いただけます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "料金シミュレーターの結果は正確ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "シミュレーターは目安金額です。正確な費用は検査・カウンセリング後にお伝えいたします。まずはお気軽にご相談ください。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="header">
+    <a href="index.html" class="header__logo">HIDAMARI DENTAL</a>
+    <nav class="header__nav">
+      <a href="index.html" class="header__nav-link">HOME</a>
+      <a href="about.html" class="header__nav-link">ABOUT</a>
+      <a href="treatment.html" class="header__nav-link">TREATMENT</a>
+      <a href="price.html" class="header__nav-link" aria-current="page">PRICE</a>
+      <a href="access.html" class="header__nav-link">ACCESS</a>
+    </nav>
+    <div class="header__right">
+      <a href="tel:0120-XXX-XXX" class="header__tel">
+        <svg class="header__tel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        0120-XXX-XXX
+      </a>
+      <a href="#" class="header__reserve-btn">WEB予約</a>
+    </div>
+    <button class="header__hamburger" aria-label="メニューを開く">
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+      <span class="header__hamburger-line"></span>
+    </button>
+  </header>
+
+  <!-- SP Menu Overlay -->
+  <div class="sp-menu-overlay">
+    <a href="index.html" class="sp-menu-overlay__link">HOME<span class="sp-menu-overlay__label">トップ</span></a>
+    <a href="about.html" class="sp-menu-overlay__link">ABOUT<span class="sp-menu-overlay__label">当院について</span></a>
+    <a href="treatment.html" class="sp-menu-overlay__link">TREATMENT<span class="sp-menu-overlay__label">診療内容</span></a>
+    <a href="price.html" class="sp-menu-overlay__link" aria-current="page">PRICE<span class="sp-menu-overlay__label">料金表</span></a>
+    <a href="access.html" class="sp-menu-overlay__link">ACCESS<span class="sp-menu-overlay__label">アクセス</span></a>
+    <a href="#" class="sp-menu-overlay__reserve">WEB予約</a>
+  </div>
+
+  <main id="main">
+    <!-- ============================================================
+         S1. ページHero
+         ============================================================ -->
+    <section class="price-hero">
+      <div class="price-hero__inner">
+        <span class="section-label">PRICE</span>
+        <h1 class="price-hero__heading">料金のご案内</h1>
+        <p class="price-hero__sub">明確な料金体系で、安心して治療を<br>お選びいただけます</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         S2. 保険診療 / 自費診療の説明
+         ============================================================ -->
+    <section class="insurance-section">
+      <div class="section-title--center fade-up">
+        <span class="section-label">INSURANCE</span>
+        <h2 class="section-heading">保険診療と自費診療</h2>
+        <p class="section-sub">当院では保険診療・自費診療の両方に対応しています。それぞれの特徴をご理解いただいた上で、最適な治療をお選びください。</p>
+      </div>
+      <div class="insurance-compare fade-up">
+        <div class="insurance-card">
+          <div class="insurance-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="var(--green-base)" stroke-width="2">
+              <rect x="6" y="10" width="36" height="28" rx="4"/>
+              <path d="M6 20h36"/>
+              <circle cx="24" cy="32" r="4"/>
+              <path d="M20 32h8"/>
+              <path d="M24 28v8"/>
+            </svg>
+          </div>
+          <h3 class="insurance-card__title">保険診療</h3>
+          <p class="insurance-card__desc">健康保険が適用される治療です。<br>自己負担は1〜3割。</p>
+          <ul class="insurance-card__list">
+            <li>虫歯治療</li>
+            <li>歯周病治療</li>
+            <li>根管治療</li>
+            <li>レジン充填</li>
+            <li>銀歯（パラジウム合金）</li>
+            <li>入れ歯（保険適用素材）</li>
+          </ul>
+        </div>
+        <div class="insurance-card insurance-card--premium">
+          <div class="insurance-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="var(--green-mid)" stroke-width="2">
+              <polygon points="24,4 29,18 44,18 32,27 36,42 24,33 12,42 16,27 4,18 19,18"/>
+            </svg>
+          </div>
+          <h3 class="insurance-card__title">自費診療</h3>
+          <p class="insurance-card__desc">保険の制限を受けない治療です。<br>素材・技術の選択肢が広がります。</p>
+          <ul class="insurance-card__list">
+            <li>セラミック修復</li>
+            <li>ホワイトニング</li>
+            <li>矯正治療</li>
+            <li>インプラント</li>
+            <li>ラミネートベニア</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         S3. 料金表（タブ切替式）
+         ============================================================ -->
+    <section class="price-table-section">
+      <div class="section-title--center fade-up">
+        <span class="section-label">PRICE LIST</span>
+        <h2 class="section-heading">料金表</h2>
+        <p class="section-sub">各診療科目の料金をご確認いただけます</p>
+      </div>
+
+      <div class="price-tabs fade-up">
+        <div class="price-tabs__nav">
+          <button class="price-tabs__tab active" data-tab="general">一般歯科</button>
+          <button class="price-tabs__tab" data-tab="cosmetic">審美歯科</button>
+          <button class="price-tabs__tab" data-tab="ortho">矯正歯科</button>
+          <button class="price-tabs__tab" data-tab="implant">インプラント</button>
+          <button class="price-tabs__tab" data-tab="preventive">予防歯科</button>
+        </div>
+
+        <!-- 一般歯科 -->
+        <div class="price-tabs__panel active" data-panel="general">
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr><th>施術名</th><th>内容</th><th>料金（税込）</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>虫歯治療</td><td>保険適用・1〜3割負担</td><td class="price-amount">約2,000〜5,000円</td></tr>
+                <tr><td>歯周病治療</td><td>保険適用・検査〜SRP</td><td class="price-amount">約3,000〜8,000円</td></tr>
+                <tr><td>根管治療</td><td>マイクロスコープ使用（自費）</td><td class="price-amount">33,000〜88,000円</td></tr>
+                <tr><td>セラミックインレー</td><td>e.max</td><td class="price-amount">44,000円</td></tr>
+                <tr><td>セラミッククラウン</td><td>e.max / ジルコニア</td><td class="price-amount">66,000〜110,000円</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 審美歯科 -->
+        <div class="price-tabs__panel" data-panel="cosmetic">
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr><th>施術名</th><th>内容</th><th>料金（税込）</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>オフィスホワイトニング</td><td>1回</td><td class="price-amount">22,000円</td></tr>
+                <tr><td>ホームホワイトニング</td><td>トレー＋ジェル</td><td class="price-amount">27,500円</td></tr>
+                <tr><td>デュアルホワイトニング</td><td>オフィス＋ホーム</td><td class="price-amount">44,000円</td></tr>
+                <tr><td>ラミネートベニア</td><td>1歯</td><td class="price-amount">88,000円</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 矯正歯科 -->
+        <div class="price-tabs__panel" data-panel="ortho">
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr><th>施術名</th><th>内容</th><th>料金（税込）</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>矯正相談</td><td>初回無料</td><td class="price-amount">0円</td></tr>
+                <tr><td>精密検査・診断</td><td>—</td><td class="price-amount">33,000円</td></tr>
+                <tr><td>マウスピース矯正（全体）</td><td>インビザライン</td><td class="price-amount">770,000〜990,000円</td></tr>
+                <tr><td>マウスピース矯正（軽度）</td><td>インビザライン Go</td><td class="price-amount">440,000〜550,000円</td></tr>
+                <tr><td>ワイヤー矯正（表側）</td><td>セラミックブラケット</td><td class="price-amount">660,000〜880,000円</td></tr>
+                <tr><td>小児矯正Ⅰ期</td><td>6〜12歳</td><td class="price-amount">330,000〜440,000円</td></tr>
+                <tr><td>部分矯正</td><td>前歯のみ</td><td class="price-amount">220,000〜440,000円</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- インプラント -->
+        <div class="price-tabs__panel" data-panel="implant">
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr><th>施術名</th><th>内容</th><th>料金（税込）</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>インプラント相談</td><td>初回無料</td><td class="price-amount">0円</td></tr>
+                <tr><td>CT精密検査</td><td>—</td><td class="price-amount">11,000円</td></tr>
+                <tr><td>インプラント1本</td><td>上部構造含む</td><td class="price-amount">330,000〜440,000円</td></tr>
+                <tr><td>骨造成（GBR）</td><td>必要な場合</td><td class="price-amount">55,000〜110,000円</td></tr>
+                <tr><td>ソケットリフト</td><td>上顎臼歯部</td><td class="price-amount">55,000円</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 予防歯科 -->
+        <div class="price-tabs__panel" data-panel="preventive">
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr><th>施術名</th><th>内容</th><th>料金（税込）</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>定期検診</td><td>保険適用</td><td class="price-amount">約3,000〜4,000円</td></tr>
+                <tr><td>PMTC</td><td>自費・60分</td><td class="price-amount">8,800円</td></tr>
+                <tr><td>フッ素塗布（お子さま）</td><td>—</td><td class="price-amount">1,100円</td></tr>
+                <tr><td>エアフロー</td><td>着色除去</td><td class="price-amount">5,500円</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-notes fade-up">
+        <p>※料金はすべて税込です</p>
+        <p>※保険診療は目安金額です。症状や治療内容によって異なります</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         S4. 料金シミュレーター
+         ============================================================ -->
+    <section class="simulator-section" id="simulator">
+      <div class="simulator-section__bg-texture"></div>
+      <div class="simulator-section__inner">
+        <div class="section-title--center fade-up" style="position:relative;z-index:1;">
+          <span class="section-label">SIMULATOR</span>
+          <h2 class="section-heading">料金シミュレーター</h2>
+          <p class="section-sub">あなたの治療費の目安を簡単にチェック</p>
+        </div>
+
+        <div class="simulator fade-up" id="simulatorApp">
+          <!-- STEP 1: カテゴリ選択 -->
+          <div class="simulator__step active" data-step="1">
+            <div class="simulator__step-header">
+              <span class="simulator__step-num">STEP 1</span>
+              <h3 class="simulator__step-title">診療カテゴリを選択</h3>
+            </div>
+            <div class="simulator__categories">
+              <label class="simulator__category-card">
+                <input type="radio" name="category" value="cosmetic">
+                <div class="simulator__category-inner">
+                  <svg class="simulator__category-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 5c-4 0-7 3-8 6-1 0-4 2-4 5s3 5 5 5c2 4 5 7 7 7s5-3 7-7c2 0 5-2 5-5s-3-5-4-5c-1-3-4-6-8-6z"/><path d="M15 20l3 3 7-8" stroke-width="2"/></svg>
+                  <span class="simulator__category-name">審美歯科</span>
+                </div>
+              </label>
+              <label class="simulator__category-card">
+                <input type="radio" name="category" value="ortho">
+                <div class="simulator__category-inner">
+                  <svg class="simulator__category-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="15" width="28" height="10" rx="5"/><line x1="14" y1="15" x2="14" y2="25"/><line x1="20" y1="15" x2="20" y2="25"/><line x1="26" y1="15" x2="26" y2="25"/></svg>
+                  <span class="simulator__category-name">矯正歯科</span>
+                </div>
+              </label>
+              <label class="simulator__category-card">
+                <input type="radio" name="category" value="implant">
+                <div class="simulator__category-inner">
+                  <svg class="simulator__category-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6v10"/><path d="M16 16h8l-1.5 10h-5L16 16z"/><path d="M17.5 26l-.5 8h6l-.5-8"/></svg>
+                  <span class="simulator__category-name">インプラント</span>
+                </div>
+              </label>
+              <label class="simulator__category-card">
+                <input type="radio" name="category" value="whitening">
+                <div class="simulator__category-inner">
+                  <svg class="simulator__category-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 5c-4 0-7 3-8 6-1 0-4 2-4 5s3 5 5 5c2 4 5 7 7 7s5-3 7-7c2 0 5-2 5-5s-3-5-4-5c-1-3-4-6-8-6z"/><path d="M16 18l2-4 2 4 2-4 2 4" stroke-width="1.5"/></svg>
+                  <span class="simulator__category-name">ホワイトニング</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: 歯の部位選択 / 矯正メニュー -->
+          <div class="simulator__step" data-step="2">
+            <div class="simulator__step-header">
+              <span class="simulator__step-num">STEP 2</span>
+              <h3 class="simulator__step-title" id="step2Title">施術部位を選択</h3>
+            </div>
+
+            <!-- 口腔内マップ（審美・インプラント用） -->
+            <div class="tooth-map" id="toothMap">
+              <p class="tooth-map__label-upper">上顎</p>
+              <div class="tooth-map__arch" id="toothMapUpper">
+                <svg viewBox="0 0 480 120" class="tooth-map__svg">
+                  <!-- 歯ぐき（歯の背面） -->
+                  <path class="tooth-map__gum" d="M21,22 L57,22 L92,24 L124,30 L153,38 L180,48 L205,58 L228,64 L252,64 L275,58 L300,48 L327,38 L356,30 L388,24 L423,22 L459,22"/>
+                  <!-- 中心線 -->
+                  <line x1="240" y1="0" x2="240" y2="120" stroke="var(--green-base)" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+                  <!-- 上顎右 8→1（外側＝臼歯が高く、中切歯が低い歯列弓） -->
+                  <g class="tooth-map__tooth" data-tooth="UR8" data-name="右上8番 第三大臼歯">
+                    <rect x="4" y="14" width="34" height="60" rx="7"/>
+                    <text x="21" y="49" text-anchor="middle">8</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UR7" data-name="右上7番 第二大臼歯">
+                    <rect x="40" y="14" width="34" height="60" rx="7"/>
+                    <text x="57" y="49" text-anchor="middle">7</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UR6" data-name="右上6番 第一大臼歯">
+                    <rect x="76" y="16" width="32" height="56" rx="7"/>
+                    <text x="92" y="49" text-anchor="middle">6</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UR5" data-name="右上5番 第二小臼歯">
+                    <rect x="110" y="22" width="28" height="50" rx="7"/>
+                    <text x="124" y="52" text-anchor="middle">5</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UR4" data-name="右上4番 第一小臼歯">
+                    <rect x="140" y="30" width="26" height="46" rx="7"/>
+                    <text x="153" y="58" text-anchor="middle">4</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UR3" data-name="右上3番 犬歯">
+                    <rect x="168" y="40" width="24" height="44" rx="7"/>
+                    <text x="180" y="67" text-anchor="middle">3</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UR2" data-name="右上2番 側切歯">
+                    <rect x="194" y="50" width="22" height="42" rx="7"/>
+                    <text x="205" y="76" text-anchor="middle">2</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UR1" data-name="右上1番 中切歯">
+                    <rect x="218" y="56" width="20" height="40" rx="6"/>
+                    <text x="228" y="81" text-anchor="middle">1</text>
+                  </g>
+                  <!-- 上顎左 1→8 -->
+                  <g class="tooth-map__tooth" data-tooth="UL1" data-name="左上1番 中切歯">
+                    <rect x="242" y="56" width="20" height="40" rx="6"/>
+                    <text x="252" y="81" text-anchor="middle">1</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UL2" data-name="左上2番 側切歯">
+                    <rect x="264" y="50" width="22" height="42" rx="7"/>
+                    <text x="275" y="76" text-anchor="middle">2</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UL3" data-name="左上3番 犬歯">
+                    <rect x="288" y="40" width="24" height="44" rx="7"/>
+                    <text x="300" y="67" text-anchor="middle">3</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UL4" data-name="左上4番 第一小臼歯">
+                    <rect x="314" y="30" width="26" height="46" rx="7"/>
+                    <text x="327" y="58" text-anchor="middle">4</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UL5" data-name="左上5番 第二小臼歯">
+                    <rect x="342" y="22" width="28" height="50" rx="7"/>
+                    <text x="356" y="52" text-anchor="middle">5</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UL6" data-name="左上6番 第一大臼歯">
+                    <rect x="372" y="16" width="32" height="56" rx="7"/>
+                    <text x="388" y="49" text-anchor="middle">6</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UL7" data-name="左上7番 第二大臼歯">
+                    <rect x="406" y="14" width="34" height="60" rx="7"/>
+                    <text x="423" y="49" text-anchor="middle">7</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="UL8" data-name="左上8番 第三大臼歯">
+                    <rect x="442" y="14" width="34" height="60" rx="7"/>
+                    <text x="459" y="49" text-anchor="middle">8</text>
+                  </g>
+                  <!-- ラベル（前歯・奥歯） -->
+                  <text x="58" y="116" class="tooth-map__side-label" text-anchor="middle">奥歯（右上）</text>
+                  <text x="240" y="116" class="tooth-map__region" text-anchor="middle">前歯</text>
+                  <text x="422" y="116" class="tooth-map__side-label" text-anchor="middle">奥歯（左上）</text>
+                </svg>
+              </div>
+              <p class="tooth-map__label-lower">下顎</p>
+              <div class="tooth-map__arch" id="toothMapLower">
+                <svg viewBox="0 0 480 120" class="tooth-map__svg">
+                  <!-- 歯ぐき（歯の背面） -->
+                  <path class="tooth-map__gum" d="M21,100 L57,100 L92,98 L124,92 L153,84 L180,74 L205,64 L228,58 L252,58 L275,64 L300,74 L327,84 L356,92 L388,98 L423,100 L459,100"/>
+                  <!-- 中心線 -->
+                  <line x1="240" y1="0" x2="240" y2="120" stroke="var(--green-base)" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+                  <!-- 下顎右 8→1（上顎の鏡像：臼歯が低く、中切歯が高い歯列弓） -->
+                  <g class="tooth-map__tooth" data-tooth="LR8" data-name="右下8番 第三大臼歯">
+                    <rect x="4" y="46" width="34" height="60" rx="7"/>
+                    <text x="21" y="81" text-anchor="middle">8</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LR7" data-name="右下7番 第二大臼歯">
+                    <rect x="40" y="46" width="34" height="60" rx="7"/>
+                    <text x="57" y="81" text-anchor="middle">7</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LR6" data-name="右下6番 第一大臼歯">
+                    <rect x="76" y="48" width="32" height="56" rx="7"/>
+                    <text x="92" y="81" text-anchor="middle">6</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LR5" data-name="右下5番 第二小臼歯">
+                    <rect x="110" y="48" width="28" height="50" rx="7"/>
+                    <text x="124" y="78" text-anchor="middle">5</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LR4" data-name="右下4番 第一小臼歯">
+                    <rect x="140" y="44" width="26" height="46" rx="7"/>
+                    <text x="153" y="72" text-anchor="middle">4</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LR3" data-name="右下3番 犬歯">
+                    <rect x="168" y="36" width="24" height="44" rx="7"/>
+                    <text x="180" y="63" text-anchor="middle">3</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LR2" data-name="右下2番 側切歯">
+                    <rect x="194" y="28" width="22" height="42" rx="7"/>
+                    <text x="205" y="54" text-anchor="middle">2</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LR1" data-name="右下1番 中切歯">
+                    <rect x="218" y="24" width="20" height="40" rx="6"/>
+                    <text x="228" y="49" text-anchor="middle">1</text>
+                  </g>
+                  <!-- 下顎左 1→8 -->
+                  <g class="tooth-map__tooth" data-tooth="LL1" data-name="左下1番 中切歯">
+                    <rect x="242" y="24" width="20" height="40" rx="6"/>
+                    <text x="252" y="49" text-anchor="middle">1</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LL2" data-name="左下2番 側切歯">
+                    <rect x="264" y="28" width="22" height="42" rx="7"/>
+                    <text x="275" y="54" text-anchor="middle">2</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LL3" data-name="左下3番 犬歯">
+                    <rect x="288" y="36" width="24" height="44" rx="7"/>
+                    <text x="300" y="63" text-anchor="middle">3</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LL4" data-name="左下4番 第一小臼歯">
+                    <rect x="314" y="44" width="26" height="46" rx="7"/>
+                    <text x="327" y="72" text-anchor="middle">4</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LL5" data-name="左下5番 第二小臼歯">
+                    <rect x="342" y="48" width="28" height="50" rx="7"/>
+                    <text x="356" y="78" text-anchor="middle">5</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LL6" data-name="左下6番 第一大臼歯">
+                    <rect x="372" y="48" width="32" height="56" rx="7"/>
+                    <text x="388" y="81" text-anchor="middle">6</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LL7" data-name="左下7番 第二大臼歯">
+                    <rect x="406" y="46" width="34" height="60" rx="7"/>
+                    <text x="423" y="81" text-anchor="middle">7</text>
+                  </g>
+                  <g class="tooth-map__tooth" data-tooth="LL8" data-name="左下8番 第三大臼歯">
+                    <rect x="442" y="46" width="34" height="60" rx="7"/>
+                    <text x="459" y="81" text-anchor="middle">8</text>
+                  </g>
+                  <!-- ラベル（前歯・奥歯） -->
+                  <text x="58" y="14" class="tooth-map__side-label" text-anchor="middle">奥歯（右下）</text>
+                  <text x="240" y="14" class="tooth-map__region" text-anchor="middle">前歯</text>
+                  <text x="422" y="14" class="tooth-map__side-label" text-anchor="middle">奥歯（左下）</text>
+                </svg>
+              </div>
+              <p class="tooth-map__count">選択した歯: <span id="toothCount">0</span>本</p>
+              <div class="tooth-map__tooltip" id="toothTooltip"></div>
+            </div>
+
+            <!-- 矯正メニュー（矯正選択時に表示） -->
+            <div class="simulator__ortho-menu" id="orthoMenu" style="display:none;">
+              <div class="simulator__radio-group">
+                <label class="simulator__radio-card">
+                  <input type="radio" name="orthoType" value="invisalign-full">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">マウスピース矯正（全体）</span>
+                    <span class="simulator__radio-price">770,000〜990,000円</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="orthoType" value="invisalign-lite">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">マウスピース矯正（軽度）</span>
+                    <span class="simulator__radio-price">440,000〜550,000円</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="orthoType" value="wire">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">ワイヤー矯正（表側）</span>
+                    <span class="simulator__radio-price">660,000〜880,000円</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="orthoType" value="child">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">小児矯正Ⅰ期</span>
+                    <span class="simulator__radio-price">330,000〜440,000円</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="orthoType" value="partial">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">部分矯正</span>
+                    <span class="simulator__radio-price">220,000〜440,000円</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- ホワイトニングメニュー -->
+            <div class="simulator__whitening-menu" id="whiteningMenu" style="display:none;">
+              <div class="simulator__radio-group">
+                <label class="simulator__radio-card">
+                  <input type="radio" name="whiteningType" value="office">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">オフィスホワイトニング</span>
+                    <span class="simulator__radio-price">22,000円</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="whiteningType" value="home">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">ホームホワイトニング</span>
+                    <span class="simulator__radio-price">27,500円</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="whiteningType" value="dual">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">デュアルホワイトニング</span>
+                    <span class="simulator__radio-price">44,000円</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: 素材・オプション選択 -->
+          <div class="simulator__step" data-step="3">
+            <div class="simulator__step-header">
+              <span class="simulator__step-num">STEP 3</span>
+              <h3 class="simulator__step-title" id="step3Title">素材を選択</h3>
+            </div>
+
+            <!-- 審美歯科 素材選択 -->
+            <div class="simulator__material-menu" id="cosmeticMaterial" style="display:none;">
+              <div class="simulator__radio-group">
+                <label class="simulator__radio-card">
+                  <input type="radio" name="material" value="emax-inlay">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">e.max セラミックインレー</span>
+                    <span class="simulator__radio-price">44,000円 / 歯</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="material" value="emax-crown">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">e.max セラミッククラウン</span>
+                    <span class="simulator__radio-price">66,000円 / 歯</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="material" value="zirconia">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">ジルコニアセラミック</span>
+                    <span class="simulator__radio-price">88,000円 / 歯</span>
+                  </div>
+                </label>
+                <label class="simulator__radio-card">
+                  <input type="radio" name="material" value="veneer">
+                  <div class="simulator__radio-inner">
+                    <span class="simulator__radio-name">ラミネートベニア</span>
+                    <span class="simulator__radio-price">88,000円 / 歯</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- インプラント オプション -->
+            <div class="simulator__implant-options" id="implantOptions" style="display:none;">
+              <p class="simulator__option-lead">選択した歯の本数: <strong id="implantToothCount">0</strong>本</p>
+              <p class="simulator__option-lead">インプラント1本あたり: <strong>330,000〜440,000円</strong>（中央値 385,000円で計算）</p>
+              <div class="simulator__checkbox-group">
+                <label class="simulator__checkbox-card">
+                  <input type="checkbox" name="gbr" value="gbr">
+                  <div class="simulator__checkbox-inner">
+                    <span class="simulator__checkbox-name">骨造成（GBR）が必要</span>
+                    <span class="simulator__checkbox-price">+82,500円 / 本</span>
+                  </div>
+                </label>
+                <label class="simulator__checkbox-card">
+                  <input type="checkbox" name="sinuslift" value="sinuslift">
+                  <div class="simulator__checkbox-inner">
+                    <span class="simulator__checkbox-name">ソケットリフトが必要</span>
+                    <span class="simulator__checkbox-price">+55,000円 / 本</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: 見積結果 -->
+          <div class="simulator__step" data-step="4">
+            <div class="simulator__step-header">
+              <span class="simulator__step-num">RESULT</span>
+              <h3 class="simulator__step-title">お見積り結果</h3>
+            </div>
+            <div class="estimate-result" id="estimateResult">
+              <div class="estimate-result__details">
+                <div class="estimate-result__row">
+                  <span class="estimate-result__label">カテゴリ</span>
+                  <span class="estimate-result__value" id="resultCategory">—</span>
+                </div>
+                <div class="estimate-result__row">
+                  <span class="estimate-result__label">施術内容</span>
+                  <span class="estimate-result__value" id="resultDetail">—</span>
+                </div>
+                <div class="estimate-result__row">
+                  <span class="estimate-result__label">対象</span>
+                  <span class="estimate-result__value" id="resultTarget">—</span>
+                </div>
+                <div class="estimate-result__row">
+                  <span class="estimate-result__label">数量</span>
+                  <span class="estimate-result__value" id="resultQuantity">—</span>
+                </div>
+              </div>
+              <div class="estimate-result__total">
+                <span class="estimate-result__total-label">概算合計</span>
+                <span class="estimate-result__total-amount" id="resultTotal">¥0</span>
+                <span class="estimate-result__total-tax">（税込）</span>
+              </div>
+              <div class="estimate-result__actions">
+                <button class="estimate-result__btn-pdf" id="btnPdf">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  PDF出力
+                </button>
+                <button class="estimate-result__btn-retry" id="btnRetry">もう一度シミュレート</button>
+              </div>
+              <p class="estimate-result__note">※本シミュレーションは目安です。正確な費用は検査後にお伝えします。</p>
+            </div>
+          </div>
+
+          <!-- ナビゲーション -->
+          <div class="simulator__nav">
+            <button class="simulator__nav-btn simulator__nav-btn--prev" id="btnPrev" style="display:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              戻る
+            </button>
+            <button class="simulator__nav-btn simulator__nav-btn--next" id="btnNext" disabled>
+              次へ
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         S5. お支払い方法 + CTA
+         ============================================================ -->
+    <section class="payment-section">
+      <div class="payment-section__inner">
+        <div class="fade-up" style="text-align:left;">
+          <span class="section-label">PAYMENT</span>
+          <h2 class="section-heading">お支払い方法</h2>
+        </div>
+        <div class="payment-methods fade-up">
+          <div class="payment-method">
+            <div class="payment-method__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="12" width="40" height="24" rx="3"/><path d="M4 20h40"/><rect x="8" y="28" width="12" height="4" rx="1"/></svg>
+            </div>
+            <span class="payment-method__name">現金</span>
+          </div>
+          <div class="payment-method">
+            <div class="payment-method__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="12" width="40" height="24" rx="3"/><path d="M4 20h40"/><circle cx="36" cy="30" r="3"/><circle cx="30" cy="30" r="3"/></svg>
+            </div>
+            <span class="payment-method__name">クレジットカード</span>
+          </div>
+          <div class="payment-method">
+            <div class="payment-method__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="32" height="32" rx="4"/><path d="M16 20h16M16 26h10"/><circle cx="34" cy="34" r="6" fill="var(--green-light)" stroke="var(--green-mid)"/><path d="M34 31v6M31 34h6" stroke="var(--green-mid)"/></svg>
+            </div>
+            <span class="payment-method__name">デンタルローン</span>
+          </div>
+          <div class="payment-method">
+            <div class="payment-method__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 8h20l4 8H10l4-8z"/><rect x="10" y="16" width="28" height="24" rx="2"/><path d="M18 24h12M18 30h8"/></svg>
+            </div>
+            <span class="payment-method__name">医療費控除対応</span>
+          </div>
+        </div>
+        <div class="payment-loan fade-up">
+          <div class="payment-loan__content">
+            <h3 class="payment-loan__title">デンタルローンのご案内</h3>
+            <p class="payment-loan__amount">月々 <span class="number-highlight" style="font-size:36px;">9,900</span> 円〜</p>
+            <p class="payment-loan__desc">の分割払いが可能です。最大84回払い・金利3.9%（ダミー数値）</p>
+          </div>
+          <div class="payment-loan__image">
+            <img src="images/treatment-2.webp" alt="カウンセリング風景" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-block fade-up">
+      <img src="images/interior-2.webp" alt="院内風景" class="cta-block__bg" loading="lazy">
+      <div class="cta-block__overlay"></div>
+      <div class="cta-block__content">
+        <h2 class="cta-block__heading">料金のご質問もお気軽にどうぞ</h2>
+        <p class="cta-block__sub">ご不明な点はお電話またはWEBからお問い合わせください</p>
+        <div class="cta-block__buttons">
+          <a href="tel:0120-XXX-XXX" class="cta-block__btn cta-block__btn--tel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            お電話: 0120-XXX-XXX
+          </a>
+          <a href="#" class="cta-block__btn cta-block__btn--web">WEB予約はこちら</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__brand-logo">HIDAMARI DENTAL</p>
+        <p class="footer__brand-sub">FAMILY &amp; COSMETIC DENTISTRY</p>
+        <p class="footer__info-item">〒000-0000 東京都○○区○○ 1-2-3 ○○ビル2F</p>
+        <p class="footer__info-item">TEL: 0120-XXX-XXX</p>
+        <p class="footer__info-item">最寄駅: ○○駅 徒歩3分</p>
+      </div>
+      <div class="footer__nav">
+        <p class="footer__nav-title">MENU</p>
+        <ul class="footer__nav-list">
+          <li><a href="index.html" class="footer__nav-link">HOME</a></li>
+          <li><a href="about.html" class="footer__nav-link">当院について</a></li>
+          <li><a href="treatment.html" class="footer__nav-link">診療内容</a></li>
+          <li><a href="price.html" class="footer__nav-link" aria-current="page">料金表</a></li>
+          <li><a href="access.html" class="footer__nav-link">アクセス</a></li>
+        </ul>
+        <p class="footer__nav-title" style="margin-top:24px;">TREATMENT</p>
+        <ul class="footer__nav-list">
+          <li><a href="treatment.html#general" class="footer__nav-link">一般歯科</a></li>
+          <li><a href="treatment.html#pediatric" class="footer__nav-link">小児歯科</a></li>
+          <li><a href="treatment.html#preventive" class="footer__nav-link">予防歯科</a></li>
+          <li><a href="treatment.html#cosmetic" class="footer__nav-link">審美歯科</a></li>
+          <li><a href="treatment.html#orthodontics" class="footer__nav-link">矯正歯科</a></li>
+          <li><a href="treatment.html#implant" class="footer__nav-link">インプラント</a></li>
+          <li><a href="treatment.html#oral-surgery" class="footer__nav-link">口腔外科</a></li>
+        </ul>
+      </div>
+      <div class="footer__schedule">
+        <p class="footer__nav-title">HOURS</p>
+        <table class="footer__schedule-table">
+          <thead>
+            <tr><th></th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>9:00-13:00</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td class="closed">休</td></tr>
+            <tr><td>14:30-18:30</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>△</td><td class="closed">休</td></tr>
+          </tbody>
+        </table>
+        <p class="footer__schedule-note">△ 土曜午後は17:00まで / 日曜・祝日休診</p>
+        <div class="footer__sns">
+          <a href="#" class="footer__sns-link" aria-label="Instagram">
+            <svg class="footer__sns-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="footer__sns-link" aria-label="X (Twitter)">
+            <svg class="footer__sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="footer__sns-link" aria-label="YouTube">
+            <svg class="footer__sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="footer__sns-link" aria-label="TikTok">
+            <svg class="footer__sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.43v-7.15a8.16 8.16 0 005.58 2.2v-3.4a4.85 4.85 0 01-4-.59z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; AKASHIKI</p>
+    </div>
+  </footer>
+
+  <!-- SP固定CTAバー -->
+  <div class="sp-cta-bar">
+    <a href="tel:0120-XXX-XXX" class="sp-cta-bar__btn sp-cta-bar__btn--tel">
+      <svg class="sp-cta-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      電話予約
+    </a>
+    <a href="#" class="sp-cta-bar__btn sp-cta-bar__btn--reserve">
+      <svg class="sp-cta-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      WEB予約
+    </a>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/jp-font.js"></script>
+  <script src="js/simulator.js"></script>
+</body>
+</html>

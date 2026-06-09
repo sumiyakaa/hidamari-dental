@@ -1,0 +1,598 @@
+/* ============================================================
+   about.css — ABOUTページ固有スタイル
+   HIDAMARI DENTAL
+   ============================================================ */
+
+/* ============================================================
+   S1. ページHero
+   ============================================================ */
+.page-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.page-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(250,246,241,0.85) 40%, transparent 70%);
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 8%;
+}
+
+.page-hero__label {
+  font-family: var(--font-en-display);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--green-base);
+  margin-bottom: 12px;
+}
+
+.page-hero__label::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--green-base);
+  margin-top: 8px;
+}
+
+.page-hero__title {
+  font-family: var(--font-ja-heading);
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.page-hero__sub {
+  font-family: var(--font-ja-heading);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   S2. 院長メッセージ
+   ============================================================ */
+.director-message {
+  padding: 100px 8%;
+  background: var(--bg-cream);
+}
+
+.director-message__layout {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.director-message__text {
+  flex: 6;
+}
+
+.director-message__section-title {
+  margin-bottom: 32px;
+}
+
+.director-message__quote {
+  font-family: var(--font-ja-heading);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--green-dark);
+  margin-bottom: 24px;
+  padding-left: 20px;
+  border-left: 3px solid var(--green-base);
+  line-height: 1.7;
+}
+
+.director-message__body {
+  font-size: 15px;
+  line-height: 2.0;
+  color: var(--text-primary);
+}
+
+.director-message__body p + p {
+  margin-top: 16px;
+}
+
+.director-message__signature {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.director-message__name {
+  font-family: var(--font-ja-heading);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.director-message__credentials {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.director-message__image {
+  flex: 4;
+  position: sticky;
+  top: 100px;
+}
+
+.director-message__image img {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+/* ============================================================
+   S3. 副院長紹介
+   ============================================================ */
+.vice-director {
+  padding: 100px 8%;
+  background: var(--bg-sand);
+}
+
+.vice-director__layout {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.vice-director__text {
+  flex: 6;
+}
+
+.vice-director__section-title {
+  margin-bottom: 32px;
+}
+
+.vice-director__section-title .section-label {
+  color: var(--warm-base);
+}
+
+.vice-director__section-title .section-label::after {
+  background: var(--warm-base);
+}
+
+.vice-director__quote {
+  font-family: var(--font-ja-heading);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--warm-dark);
+  margin-bottom: 24px;
+  padding-left: 20px;
+  border-left: 3px solid var(--warm-base);
+  line-height: 1.7;
+}
+
+.vice-director__body {
+  font-size: 15px;
+  line-height: 2.0;
+  color: var(--text-primary);
+}
+
+.vice-director__body p + p {
+  margin-top: 16px;
+}
+
+.vice-director__signature {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.vice-director__name {
+  font-family: var(--font-ja-heading);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.vice-director__credentials {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+.vice-director__image {
+  flex: 4;
+  position: sticky;
+  top: 100px;
+}
+
+.vice-director__image img {
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+/* ============================================================
+   S4. スタッフ紹介
+   ============================================================ */
+.staff-section {
+  padding: 100px 5%;
+  background: var(--bg-cream);
+}
+
+.staff-section__title {
+  margin-bottom: 40px;
+}
+
+.staff__scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+}
+
+.staff__card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  background: var(--bg-white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: var(--border-light);
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.staff__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.staff__card-photo-wrap {
+  overflow: hidden;
+}
+
+.staff__card-photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.staff__card:hover .staff__card-photo {
+  transform: scale(1.06);
+}
+
+.staff__card-body {
+  padding: 20px;
+}
+
+.staff__card-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.staff__card-role {
+  font-size: 12px;
+  color: var(--green-mid);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.staff__card-comment {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   S5. 院内設備
+   ============================================================ */
+.equipment-section {
+  padding: 100px 5%;
+  background: var(--bg-sand);
+}
+
+.equipment-section__title {
+  margin-bottom: 48px;
+}
+
+.equipment__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.equipment__item:first-child {
+  grid-column: 1 / 3;
+}
+
+.equipment__item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.equipment__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 200px;
+  transition: transform 0.4s var(--ease-smooth);
+  display: block;
+}
+
+.equipment__item:hover img {
+  transform: scale(1.06);
+}
+
+.equipment__item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(44,42,37,0.8));
+  padding: 40px 20px 16px;
+}
+
+.equipment__item-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.equipment__item-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   S6. 院内ツアー
+   ============================================================ */
+.tour-section {
+  padding: 100px 0;
+  background: var(--bg-cream);
+}
+
+.tour-section__title {
+  padding: 0 5%;
+  margin-bottom: 40px;
+}
+
+.tour__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 0 5%;
+  flex-wrap: wrap;
+}
+
+.tour__tab {
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: var(--border-light);
+  background: var(--bg-white);
+  transition: all 0.2s;
+  color: var(--text-primary);
+}
+
+.tour__tab:hover {
+  background: var(--green-light);
+}
+
+.tour__tab.active {
+  background: var(--green-mid);
+  color: white;
+  border-color: var(--green-mid);
+}
+
+.tour__panel {
+  display: none;
+  gap: 40px;
+  padding: 0 8%;
+  align-items: center;
+}
+
+.tour__panel.active {
+  display: flex;
+}
+
+.tour__panel-image {
+  flex: 6;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tour__panel-image img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.tour__panel-image:hover img {
+  transform: scale(1.04);
+}
+
+.tour__panel-text {
+  flex: 4;
+}
+
+.tour__panel-title {
+  font-family: var(--font-ja-heading);
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.tour__panel-desc {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   RESPONSIVE — SP
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Page Hero */
+  .page-hero {
+    height: 40vh;
+    min-height: 280px;
+  }
+  .page-hero__gradient {
+    background: linear-gradient(to top, rgba(250,246,241,0.9) 30%, rgba(250,246,241,0.5) 70%);
+  }
+  .page-hero__content {
+    justify-content: flex-end;
+    padding-bottom: 32px;
+  }
+  .page-hero__title {
+    font-size: 28px;
+  }
+  .page-hero__sub {
+    font-size: 15px;
+  }
+
+  /* Director */
+  .director-message {
+    padding: 64px 6%;
+  }
+  .director-message__layout {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .director-message__image {
+    position: static;
+    order: -1;
+  }
+  .director-message__image img {
+    aspect-ratio: 4/3;
+  }
+  .director-message__quote {
+    font-size: 19px;
+  }
+
+  /* Vice Director */
+  .vice-director {
+    padding: 64px 6%;
+  }
+  .vice-director__layout {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .vice-director__image {
+    position: static;
+  }
+  .vice-director__image img {
+    aspect-ratio: 4/3;
+  }
+  .vice-director__quote {
+    font-size: 19px;
+  }
+
+  /* Staff */
+  .staff-section {
+    padding: 64px 4%;
+  }
+  .staff__card {
+    flex: 0 0 240px;
+  }
+
+  /* Equipment */
+  .equipment-section {
+    padding: 64px 4%;
+  }
+  .equipment__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .equipment__item:first-child {
+    grid-column: 1 / 3;
+  }
+
+  /* Tour */
+  .tour-section {
+    padding: 64px 0;
+  }
+  .tour__tabs {
+    overflow-x: auto;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 6px;
+  }
+  .tour__tab {
+    flex-shrink: 0;
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+  .tour__panel,
+  .tour__panel.active {
+    flex-direction: column;
+    padding: 0 5%;
+    gap: 20px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .director-message {
+    padding: 80px 6%;
+  }
+  .director-message__layout {
+    gap: 40px;
+  }
+
+  .vice-director {
+    padding: 80px 6%;
+  }
+  .vice-director__layout {
+    gap: 40px;
+  }
+
+  .equipment__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .equipment__item:first-child {
+    grid-column: 1 / 3;
+  }
+
+  .tour__panel {
+    gap: 28px;
+    padding: 0 5%;
+  }
+}

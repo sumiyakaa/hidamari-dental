@@ -1,0 +1,7 @@
+# 作業用素材はデプロイ対象外（プレースホルダ生成PNG群・進捗メモ）
+hidamari-dental-img/
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+desktop.ini

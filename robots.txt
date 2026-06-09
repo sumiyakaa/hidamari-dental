@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sumiyakaa.github.io/hidamari-dental/sitemap.xml
