@@ -1,6 +1,14 @@
 # 作業用素材はデプロイ対象外（プレースホルダ生成PNG群・進捗メモ）
 hidamari-dental-img/
 
+# リニューアル作業物（公開対象外）
+_design/
+_shot/
+image-prompts*.md
+CHATGPT_PROMPTS*.md
+*.ps1
+gen-*.mjs
+
 # OS / エディタ
 .DS_Store
 Thumbs.db

@@ -387,13 +387,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let y = margin;
 
     /* ヘッダーバー */
-    doc.setFillColor(61, 94, 48); // --green-dark
+    doc.setFillColor(27, 27, 27); // --dark（チャコール）
     doc.rect(0, 0, pageW, 28, 'F');
-    doc.setTextColor(255, 255, 255);
+    doc.setTextColor(245, 243, 242);
     doc.setFontSize(16);
     doc.text('HIDAMARI DENTAL CLINIC', margin, 12);
     doc.setFontSize(8);
-    doc.text('FAMILY & COSMETIC DENTISTRY', margin, 18);
+    doc.text('DENTAL CLINIC', margin, 18);
     doc.setFontSize(8);
     doc.text('TEL: 0120-XXX-XXX', pageW - margin, 12, { align: 'right' });
     y = 40;
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
     y += 12;
 
     /* 区切り線 */
-    doc.setDrawColor(123, 158, 107); // --green-base
+    doc.setDrawColor(176, 176, 174); // --grey
     doc.setLineWidth(0.5);
     doc.line(margin, y, pageW - margin, y);
     y += 10;
@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     y += 6;
-    doc.setDrawColor(123, 158, 107);
+    doc.setDrawColor(176, 176, 174);
     doc.line(margin, y, pageW - margin, y);
     y += 12;
 
@@ -444,12 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
     doc.setTextColor(138, 132, 119);
     doc.text('Total (tax incl.)', margin, y);
     doc.setFontSize(22);
-    doc.setTextColor(61, 94, 48);
+    doc.setTextColor(27, 27, 27);
     const totalText = document.getElementById('resultTotal').textContent;
     doc.text(totalText, pageW - margin, y, { align: 'right' });
     y += 16;
 
-    doc.setDrawColor(123, 158, 107);
+    doc.setDrawColor(176, 176, 174);
     doc.line(margin, y, pageW - margin, y);
     y += 14;
 

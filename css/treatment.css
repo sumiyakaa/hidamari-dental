@@ -1,787 +1,104 @@
 /* ============================================================
-   treatment.css — TREATMENTページ固有スタイル
-   HIDAMARI DENTAL
+   treatment.css — 診療内容
+   HIDAMARI DENTAL — DELTA アンカー（無彩色プレミアム）
    ============================================================ */
 
-/* ============================================================
-   S1. ページHero（斜めクリップ）
-   ============================================================ */
-.page-hero--treatment {
-  position: relative;
-  width: 100%;
-  height: 40vh;
-  min-height: 320px;
-  overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-}
-
-.page-hero--treatment .page-hero__image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.page-hero--treatment .page-hero__gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(250,246,241,0.88) 35%, rgba(250,246,241,0.3) 70%);
-}
-
-.page-hero--treatment .page-hero__content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding: 0 8%;
-}
-
-/* ============================================================
-   S2. 診療科目ナビ（sticky）
-   ============================================================ */
+/* ============================ STICKY NAV ============================ */
 .treatment-nav-sticky {
-  position: sticky;
-  top: 72px;
-  z-index: 50;
-  background: var(--bg-white);
-  border-bottom: var(--border-light);
-  padding: 12px 5%;
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  position: sticky; top: 68px; z-index: 50;
+  display: flex; gap: 4px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  background: rgba(245,243,242,0.92); border-bottom: 1px solid var(--line);
+  padding: 12px clamp(16px, 4vw, 40px); scrollbar-width: none;
 }
-
+.treatment-nav-sticky::-webkit-scrollbar { display: none; }
 .treatment-nav-sticky__item {
-  padding: 8px 20px;
-  border-radius: 24px;
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  border: var(--border-light);
-  background: var(--bg-cream);
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  color: var(--text-primary);
-  flex-shrink: 0;
+  flex: none; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--ink-2);
+  padding: 9px 18px; border-radius: 100px; white-space: nowrap; transition: background 0.3s, color 0.3s;
+}
+.treatment-nav-sticky__item:hover { color: var(--ink); }
+.treatment-nav-sticky__item.active { background: var(--ink); color: var(--bg); }
+
+/* ============================ TREAT 共通 ============================ */
+.treat { scroll-margin-top: 130px; }
+.treat__layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 5vw, 80px); align-items: center; }
+.treat--reverse .treat__media { order: 2; }
+.treat__media { overflow: hidden; border-radius: 4px; }
+.treat__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.treat__head { text-align: center; margin-bottom: clamp(40px, 5vw, 64px); }
+.treat__head .caption, .treat__body .caption { display: block; margin-bottom: 14px; }
+.treat__title { font-size: clamp(26px, 3.4vw, 38px); font-weight: 500; letter-spacing: 0.04em; margin-bottom: 22px; }
+.treat__lead { font-size: 15px; line-height: 2.05; letter-spacing: 0.05em; color: var(--ink-2); margin-bottom: 26px; }
+
+.treat__list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.treat__list li { position: relative; padding-left: 22px; font-size: 14.5px; letter-spacing: 0.04em; color: var(--ink); }
+.treat__list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 8px; height: 8px; border: 1px solid var(--ink); border-radius: 50%; }
+
+.treat__note { border-left: 2px solid var(--ink); padding: 4px 0 4px 22px; }
+.treat__note-title { font-size: 14px; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 6px; }
+.treat__note-desc { font-size: 13.5px; line-height: 1.85; color: var(--ink-2); }
+
+.treat__sub-h { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; margin: 26px 0 14px; }
+.treat__steps { display: flex; flex-wrap: wrap; gap: 8px; }
+.treat__steps li { display: flex; align-items: center; gap: 8px; font-size: 13px; letter-spacing: 0.03em; background: var(--bg-2); border: 1px solid var(--line); border-radius: 100px; padding: 8px 16px; }
+.treat__steps span { font-family: var(--font-en); font-size: 11px; font-weight: 600; color: var(--ink-3); }
+.treat__freq { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line); }
+.treat__freq > div { display: flex; justify-content: space-between; align-items: center; padding: 14px 4px; border-bottom: 1px solid var(--line); }
+.treat__freq dt { font-size: 14px; font-weight: 500; }
+.treat__freq dd { font-family: var(--font-en); font-size: 14px; color: var(--ink-2); letter-spacing: 0.02em; }
+
+/* サブカード（審美・口腔外科） */
+.sub-cards { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 3vw, 44px); }
+.sub-cards--3 { grid-template-columns: repeat(3, 1fr); }
+.sub-card__img { overflow: hidden; border-radius: 4px; margin-bottom: 22px; }
+.sub-card__img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.8s var(--ease-out); }
+.sub-card:hover .sub-card__img img { transform: scale(1.05); }
+.sub-card__body .caption { display: block; margin-bottom: 10px; }
+.sub-card__title { font-size: 20px; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 12px; }
+.sub-card__desc { font-size: 14px; line-height: 1.95; letter-spacing: 0.04em; color: var(--ink-2); }
+.ceramic-table { width: 100%; margin-top: 18px; border-top: 1px solid var(--line); font-size: 13px; }
+.ceramic-table th, .ceramic-table td { padding: 10px 8px; text-align: center; border-bottom: 1px solid var(--line); }
+.ceramic-table th { font-family: var(--font-en); font-weight: 600; color: var(--ink-2); letter-spacing: 0.04em; }
+.ceramic-table td:first-child, .ceramic-table th:first-child { text-align: left; }
+
+/* アコーディオン */
+.accordion { border-top: 1px solid var(--line); }
+.accordion__item { border-bottom: 1px solid var(--line); }
+.accordion__header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; font-size: 14.5px; font-weight: 500; letter-spacing: 0.03em; cursor: pointer; }
+.accordion__chevron { width: 20px; height: 20px; flex-shrink: 0; transition: transform 0.4s var(--ease-out); color: var(--ink-2); }
+.accordion__item.open .accordion__chevron { transform: rotate(180deg); }
+.accordion__body { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease-out); }
+.accordion__body p { padding: 0 0 22px; font-size: 14px; line-height: 1.95; color: var(--ink-2); }
+
+/* タイムライン */
+.timeline { position: relative; margin-left: 6px; padding-left: 28px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 24px; }
+.timeline__item { position: relative; }
+.timeline__item::before { content: ''; position: absolute; left: -33px; top: 5px; width: 9px; height: 9px; background: var(--ink); border-radius: 50%; }
+.timeline__step { font-family: var(--font-en); font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--ink-3); text-transform: uppercase; }
+.timeline__title { font-size: 15px; font-weight: 500; letter-spacing: 0.03em; margin-top: 3px; }
+.timeline__note { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+
+/* ============================ 症例（ダーク・横スクロール） ============================ */
+.cases__scroll { display: flex; gap: clamp(20px, 2.5vw, 32px); overflow-x: auto; padding-bottom: 18px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+.case-card { flex: none; width: clamp(280px, 34vw, 380px); scroll-snap-align: start; }
+.case__comparison { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; border-radius: 4px; overflow: hidden; }
+.case__comparison img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.case__label { position: absolute; bottom: 10px; font-family: var(--font-en); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 100px; background: rgba(27,27,27,0.7); color: var(--on-dark); }
+.case__label--before { left: 10px; }
+.case__label--after { right: 10px; background: rgba(245,243,242,0.92); color: var(--dark); }
+.case-card__body { padding-top: 18px; }
+.case-card__cat { font-family: var(--font-en); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark-2); margin-bottom: 6px; }
+.case-card__title { font-size: 16px; font-weight: 500; letter-spacing: 0.03em; color: var(--on-dark); margin-bottom: 8px; }
+.case-card__dur { font-size: 13px; color: var(--on-dark-2); margin-bottom: 10px; }
+.case__disc { font-size: 11px; line-height: 1.7; color: var(--on-dark-3); }
+
+/* ============================ RESPONSIVE ============================ */
+@media (max-width: 1023px) {
+  .sub-cards--3 { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
 }
-
-.treatment-nav-sticky__item.active,
-.treatment-nav-sticky__item:hover {
-  background: var(--green-mid);
-  color: white;
-  border-color: var(--green-mid);
-}
-
-/* ============================================================
-   S3. 診療科目詳細 — 共通ベース
-   ============================================================ */
-.treatment-section {
-  padding: 80px 8%;
-}
-
-.treatment-section:nth-child(odd) {
-  background: var(--bg-cream);
-}
-
-.treatment-section:nth-child(even) {
-  background: var(--bg-sand);
-}
-
-.treatment-section__header {
-  margin-bottom: 32px;
-}
-
-.treatment-section__label {
-  font-family: var(--font-en-display);
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  color: var(--green-base);
-  margin-bottom: 8px;
-  display: block;
-}
-
-.treatment-section__label::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--green-base);
-  margin-top: 8px;
-}
-
-.treatment-section__label--warm {
-  color: var(--warm-base);
-}
-
-.treatment-section__label--warm::after {
-  background: var(--warm-base);
-}
-
-.treatment-section__title {
-  font-family: var(--font-ja-heading);
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--text-primary);
-  line-height: 1.5;
-}
-
-/* --- フロート配置（[E]）--- */
-.treatment-float {
-  display: flex;
-  gap: 48px;
-  align-items: flex-start;
-}
-
-.treatment-float--reverse {
-  flex-direction: row-reverse;
-}
-
-.treatment-float__image {
-  flex: 6;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.treatment-float__image img {
-  width: 100%;
-  aspect-ratio: 3/2;
-  object-fit: cover;
-  transition: transform 0.4s var(--ease-smooth);
-}
-
-.treatment-float__image:hover img {
-  transform: scale(1.06);
-}
-
-.treatment-float__content {
-  flex: 4;
-}
-
-/* 対応内容リスト */
-.treatment-list {
-  margin: 20px 0;
-}
-
-.treatment-list__item {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text-primary);
-  padding: 4px 0 4px 20px;
-  position: relative;
-}
-
-.treatment-list__item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 12px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green-light);
-  border: 2px solid var(--green-base);
-}
-
-/* 特徴ボックス */
-.treatment-feature-box {
-  background: var(--green-light);
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin-top: 24px;
-  border-left: 4px solid var(--green-base);
-}
-
-.treatment-feature-box__title {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--green-dark);
-  margin-bottom: 8px;
-}
-
-.treatment-feature-box__desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-/* ============================================================
-   3-3. 予防歯科 — [B] オーバーレイ重ね
-   ============================================================ */
-.treatment-overlay {
-  position: relative;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.treatment-overlay__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.treatment-overlay__dim {
-  position: absolute;
-  inset: 0;
-  background: rgba(250,246,241,0.88);
-}
-
-.treatment-overlay__card {
-  position: relative;
-  z-index: 2;
-  background: var(--bg-white);
-  border-radius: 16px;
-  box-shadow: var(--shadow-elevated);
-  padding: 48px 40px;
-  max-width: 720px;
-  width: 90%;
-}
-
-/* 予防ステップ */
-.prevention-steps {
-  display: flex;
-  gap: 0;
-  margin: 24px 0;
-}
-
-.prevention-step {
-  flex: 1;
-  text-align: center;
-  padding: 16px 8px;
-  position: relative;
-}
-
-.prevention-step::after {
-  content: '→';
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--green-base);
-  font-size: 18px;
-  z-index: 1;
-}
-
-.prevention-step:last-child::after {
-  display: none;
-}
-
-.prevention-step__number {
-  font-family: var(--font-en-display);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--green-base);
-  line-height: 1;
-}
-
-.prevention-step__label {
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: 6px;
-  color: var(--text-primary);
-}
-
-/* 検診頻度テーブル */
-.frequency-list {
-  margin-top: 20px;
-  background: var(--bg-cream);
-  border-radius: 8px;
-  padding: 16px 20px;
-}
-
-.frequency-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(232,223,210,0.5);
-}
-
-.frequency-item:last-child {
-  border-bottom: none;
-}
-
-.frequency-item__label {
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
-.frequency-item__value {
-  color: var(--green-mid);
-  font-weight: 700;
-}
-
-/* ============================================================
-   3-4. 審美歯科 — [C] 2カラムカード
-   ============================================================ */
-.cosmetic-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.cosmetic-card {
-  background: var(--bg-white);
-  border-radius: 16px;
-  overflow: hidden;
-  border: var(--border-light);
-  transition: all 0.3s var(--ease-smooth);
-}
-
-.cosmetic-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card);
-}
-
-.cosmetic-card__image-wrap {
-  overflow: hidden;
-}
-
-.cosmetic-card__image {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  transition: transform 0.4s var(--ease-smooth);
-}
-
-.cosmetic-card:hover .cosmetic-card__image {
-  transform: scale(1.06);
-}
-
-.cosmetic-card__body {
-  padding: 24px;
-}
-
-.cosmetic-card__label {
-  font-family: var(--font-en-display);
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  color: var(--green-base);
-  margin-bottom: 4px;
-}
-
-.cosmetic-card__title {
-  font-family: var(--font-ja-heading);
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 12px;
-  color: var(--text-primary);
-}
-
-.cosmetic-card__desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-/* 素材比較テーブル */
-.ceramic-table {
-  width: 100%;
-  font-size: 13px;
-  border-collapse: collapse;
-  margin-top: 12px;
-}
-
-.ceramic-table th {
-  background: var(--green-light);
-  color: var(--green-dark);
-  padding: 8px 12px;
-  text-align: left;
-  font-weight: 500;
-}
-
-.ceramic-table td {
-  padding: 8px 12px;
-  border-bottom: 1px solid #E8DFD2;
-  color: var(--text-primary);
-}
-
-/* ============================================================
-   3-5. 矯正歯科 — アコーディオン
-   ============================================================ */
-.accordion {
-  margin-top: 20px;
-}
-
-.accordion__item {
-  border: var(--border-light);
-  border-radius: 12px;
-  margin-bottom: 8px;
-  overflow: hidden;
-}
-
-.accordion__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  cursor: pointer;
-  background: var(--bg-white);
-  font-weight: 500;
-  font-size: 15px;
-  transition: background 0.2s;
-  color: var(--text-primary);
-}
-
-.accordion__header:hover {
-  background: var(--green-light);
-}
-
-.accordion__chevron {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s var(--ease-smooth);
-  flex-shrink: 0;
-}
-
-.accordion__item.open .accordion__chevron {
-  transform: rotate(180deg);
-}
-
-.accordion__body {
-  padding: 0 20px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s var(--ease-smooth), padding 0.3s;
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text-secondary);
-}
-
-.accordion__item.open .accordion__body {
-  padding: 0 20px 16px;
-}
-
-/* ============================================================
-   3-6. インプラント — タイムライン
-   ============================================================ */
-.timeline {
-  position: relative;
-  padding-left: 40px;
-  margin-top: 24px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--green-light);
-}
-
-.timeline__item {
-  position: relative;
-  padding: 0 0 32px 24px;
-}
-
-.timeline__item:last-child {
-  padding-bottom: 0;
-}
-
-.timeline__item::before {
-  content: '';
-  position: absolute;
-  left: -32px;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--green-base);
-  border: 3px solid var(--green-light);
-}
-
-.timeline__step-label {
-  font-family: var(--font-en-display);
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  color: var(--green-base);
-  font-weight: 600;
-}
-
-.timeline__step-title {
-  font-size: 15px;
-  font-weight: 700;
-  margin: 4px 0;
-  color: var(--text-primary);
-}
-
-.timeline__step-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-/* ============================================================
-   3-7. 口腔外科 — 3カード
-   ============================================================ */
-.oral-surgery-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.oral-surgery-card {
-  background: var(--bg-white);
-  border-radius: 16px;
-  overflow: hidden;
-  border: var(--border-light);
-  transition: all 0.3s var(--ease-smooth);
-}
-
-.oral-surgery-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card);
-}
-
-.oral-surgery-card__image-wrap {
-  overflow: hidden;
-}
-
-.oral-surgery-card__image {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  transition: transform 0.4s var(--ease-smooth);
-}
-
-.oral-surgery-card:hover .oral-surgery-card__image {
-  transform: scale(1.06);
-}
-
-.oral-surgery-card__body {
-  padding: 20px;
-}
-
-.oral-surgery-card__title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--text-primary);
-}
-
-.oral-surgery-card__desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-/* ============================================================
-   S4. 症例ビフォーアフター
-   ============================================================ */
-.cases-section {
-  padding: 80px 5%;
-  background: var(--bg-cream);
-}
-
-.cases-section__title {
-  margin-bottom: 40px;
-}
-
-.cases__scroll {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 20px;
-}
-
-.case-card {
-  flex: 0 0 320px;
-  scroll-snap-align: start;
-  background: var(--bg-white);
-  border-radius: 16px;
-  overflow: hidden;
-  border: var(--border-light);
-  transition: all 0.3s var(--ease-smooth);
-}
-
-.case-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-card);
-}
-
-.case__comparison {
-  display: flex;
-  gap: 4px;
-  position: relative;
-}
-
-.case__before,
-.case__after {
-  flex: 1;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-}
-
-.case__label {
-  position: absolute;
-  bottom: 8px;
-  padding: 2px 10px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 700;
-  color: white;
-}
-
-.case__label--before {
-  left: 8px;
-  background: var(--text-secondary);
-}
-
-.case__label--after {
-  right: 8px;
-  background: var(--green-mid);
-}
-
-.case-card__body {
-  padding: 16px 20px;
-}
-
-.case-card__category {
-  font-size: 12px;
-  color: var(--green-mid);
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.case-card__title {
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  color: var(--text-primary);
-}
-
-.case-card__duration {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.case__disclaimer {
-  font-size: 11px;
-  color: var(--text-tertiary);
-  margin-top: 8px;
-  line-height: 1.5;
-}
-
-/* ============================================================
-   RESPONSIVE — SP
-   ============================================================ */
 @media (max-width: 767px) {
-  /* Hero */
-  .page-hero--treatment {
-    height: 35vh;
-    min-height: 260px;
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-  }
-
-  /* Sticky nav */
-  .treatment-nav-sticky {
-    top: 60px;
-    padding: 10px 4%;
-    gap: 6px;
-  }
-  .treatment-nav-sticky__item {
-    padding: 6px 16px;
-    font-size: 12px;
-  }
-
-  /* Treatment sections */
-  .treatment-section {
-    padding: 48px 5%;
-  }
-
-  .treatment-section__title {
-    font-size: 24px;
-  }
-
-  /* Float → stack */
-  .treatment-float,
-  .treatment-float--reverse {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  /* Overlay */
-  .treatment-overlay {
-    min-height: 400px;
-    padding: 24px 4%;
-  }
-  .treatment-overlay__card {
-    padding: 32px 24px;
-  }
-
-  /* Prevention steps */
-  .prevention-steps {
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .prevention-step {
-    flex: 0 0 calc(33.33% - 4px);
-    padding: 12px 4px;
-    font-size: 12px;
-  }
-  .prevention-step__number {
-    font-size: 20px;
-  }
-  .prevention-step::after {
-    display: none;
-  }
-
-  /* Cosmetic cards */
-  .cosmetic-cards {
-    grid-template-columns: 1fr;
-  }
-
-  /* Oral surgery cards */
-  .oral-surgery-cards {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* Cases */
-  .cases-section {
-    padding: 48px 4%;
-  }
-  .case-card {
-    flex: 0 0 280px;
-  }
-}
-
-/* ============================================================
-   RESPONSIVE — Tablet
-   ============================================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .treatment-section {
-    padding: 64px 5%;
-  }
-
-  .treatment-float {
-    gap: 32px;
-  }
-
-  .cosmetic-cards {
-    gap: 16px;
-  }
-
-  .oral-surgery-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-  .oral-surgery-cards .oral-surgery-card:last-child {
-    grid-column: 1 / -1;
-    max-width: 50%;
-    margin: 0 auto;
-  }
+  .treatment-nav-sticky { top: 56px; }
+  .treat__layout { grid-template-columns: 1fr; gap: 28px; }
+  .treat--reverse .treat__media { order: 0; }
+  .sub-cards { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .case-card { width: 78vw; }
 }
